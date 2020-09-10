@@ -1,9 +1,17 @@
 {
   "name": "graphql-timezone",
-  "version": "2.0.3",
+  "version": "2.0.5",
   "description": "Timezone enum type for GraphQL",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "homepage": "https://github.com/homoky/graphql-timezone",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/homoky/graphql-timezone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/homoky/graphql-timezone/issues"
+  },
   "scripts": {
     "prepublish": "yarn generate:timezones && tsc",
     "generate:timezones": "ts-node ./generateTimezones.ts",
