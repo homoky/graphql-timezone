@@ -1,0 +1,28 @@
+{
+  "name": "graphql-timezone",
+  "version": "2.0.3",
+  "description": "Timezone enum type for GraphQL",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublish": "yarn generate:timezones && tsc",
+    "generate:timezones": "ts-node ./generateTimezones.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graphql",
+    "scalar",
+    "timezone"
+  ],
+  "author": "Petr Homoky",
+  "license": "ISC",
+  "dependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/moment-timezone": "^0.5.30",
+    "@types/node": "^14.6.2",
+    "graphql": "^15.3.0",
+    "graphql-scalar": "^0.0.11",
+    "moment-timezone": "^0.5.31",
+    "tsdef": "0.0.14"
+  }
+}
