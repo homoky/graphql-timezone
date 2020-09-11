@@ -1,5 +1,5 @@
-import { createStringScalar } from 'graphql-scalar';
-import { timezones } from './timezones';
+import { createStringScalar } from "graphql-scalar";
+import { timezones } from "./timezones";
 
 type Props = {
   name?: string;
@@ -16,7 +16,7 @@ export default ({ name, description }: Props = {}) =>
     nonEmpty: true,
     trim: true,
     // @ts-ignore
-    validate: (value) => timezones.includes(value),
+    validate: value => timezones.includes(value)
   });
 
-export { timezones, Timezone } from "./timezones";
+export { timezones, Timezone, timezoneOptions } from "./timezones";

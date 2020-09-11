@@ -9,14 +9,16 @@ const start = async () => {
   // @ts-ignore
   const timezones = moment.tz.names();
 
-  await fs.unlink(typesFilePath, function () {});
+  await fs.unlink(typesFilePath, function() {});
 
-  await fs.writeFile(typesFilePath, "", function () {});
+  await fs.writeFile(typesFilePath, "", function() {});
 
   await fs.appendFile(
     typesFilePath,
     `// Generated at: ${moment().toISOString()}\n\nexport const timezones = [${timezones
       .map((timezone: string) => `"${timezone}"`)
+      .join(",")}]\n\nexport const timezoneOptions = [${timezones
+      .map((timezone: string) => `{value: "${timezone}", label: "${timezone}"}`)
       .join(",")}]\n\nexport enum Timezone { ${timezones
       .map(
         (timezone: string) =>
@@ -64,7 +66,7 @@ const start = async () => {
             .replace("+", "Plus")} = "${timezone}"`
       )
       .join(",")} }`,
-    function () {}
+    function() {}
   );
 
   console.log("Done");

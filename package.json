@@ -1,6 +1,6 @@
 {
   "name": "graphql-timezone",
-  "version": "2.0.5",
+  "version": "2.0.7",
   "description": "Timezone enum type for GraphQL",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,7 @@
   },
   "scripts": {
     "prepublish": "yarn generate:timezones && tsc",
-    "generate:timezones": "ts-node ./generateTimezones.ts",
+    "generate:timezones": "ts-node ./generateTimezones.ts && prettier --write \"*.ts*\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
